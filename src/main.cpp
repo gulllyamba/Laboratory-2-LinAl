@@ -16,8 +16,9 @@ int main() {
 
     Perceptron model(n);
     std::cout << "Training started..." << "\n";
+    std::cout << "Epoch | Accuracy | Error | Loss\n";
     auto start = std::chrono::high_resolution_clock::now();
-    model.batch_train(X_train, y_train, 100, 1000);
+    model.batch_train(X_train, y_train, 100, 1000, 0.001);
     auto end = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> delta = end - start;
     std::cout << "Training completed in " << delta.count() << " seconds" << "\n";
